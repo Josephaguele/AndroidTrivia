@@ -32,6 +32,7 @@ class GameOverFragment : Fragment() {
         val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_game_over, container, false)
 
+        // this allows the user to navigate to the game fragment when the try again button is clicked
         binding.tryAgainButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_gameOverFragment2_to_gameFragment)
         }
