@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         @Suppress("UNUSED_VARIABLE")
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        // This finds our navigationController
+        // This finds our navigationController from myNavHostFragment
         val navController = this.findNavController(R.id.myNavHostFragment)
         // This links the NavController to our Action Bar
         NavigationUI.setupActionBarWithNavController(this, navController)
