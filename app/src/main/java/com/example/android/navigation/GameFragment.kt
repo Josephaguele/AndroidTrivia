@@ -97,12 +97,16 @@ class GameFragment : Fragment() {
                         setQuestion()
                         binding.invalidateAll()
                     } else {
+                        // Switch the GameFragment to use generated NavDirections when navigating to
+                            // the GameOver and GameWon fragments
                         // We've won!  Navigate to the gameWonFragment.
-                        view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+                            // Adding the parameters to the Action
+                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
-                    view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment2)
+                        // Using directions to navigate to the GameOverFragment
+                    view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment2())
                 }
             }
         }
